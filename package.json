@@ -1,0 +1,23 @@
+{
+  "name": "hlife-payment",
+  "version": "1.0.0",
+  "description": "ping++ payment webhooks server for HLife",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simors/HLifePayment.git"
+  },
+  "keywords": [
+    "ping++",
+    "webhooks"
+  ],
+  "author": "simor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simors/HLifePayment/issues"
+  },
+  "homepage": "https://github.com/simors/HLifePayment#readme"
+}
