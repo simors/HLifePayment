@@ -22,13 +22,16 @@ http.createServer(function (req, res) {
       switch (event.type) {
         case "charge.succeeded":
           // 开发者在此处加入对支付异步通知的处理代码
+          console.log("get Event: charge.succeeded")
           return resp("OK", 200);
           break;
         case "refund.succeeded":
           // 开发者在此处加入对退款异步通知的处理代码
+          console.log("get Event: refund.succeeded")
           return resp("OK", 200);
           break;
         default:
+          console.log("get Event: 未知 Event 类型")
           return resp("未知 Event 类型", 400);
           break;
       }
@@ -36,6 +39,6 @@ http.createServer(function (req, res) {
       return resp('JSON 解析失败', 400);
     }
   });
-}).listen(8000, "127.0.0.1");
+}).listen(3000, "127.0.0.1");
 
-console.log('Server running on port 8000.');
+console.log('Server running on port 3000.');
