@@ -3,6 +3,7 @@
  */
 'use strict';
 var express = require('express');
+var AV = require('leancloud-storage');
 
 
 var app = express();
@@ -37,6 +38,15 @@ app.use(function (req, res) {
       }
       switch (event.type) {
         case "charge.succeeded":
+          var params = {
+            data: event.data,
+          }
+          AV.Cloud.run('hLifePaymentEvent', params).then((result) => {
+            return result
+          }).catch((error) => {
+            error.message = ERROR[error.code] ? ERROR[error.code] : ERROR[9999]
+            throw  error
+          })
           console.log("get event: charge.succeeded")
           // 开发者在此处加入对支付异步通知的处理代码
           return resp("OK", 200);
