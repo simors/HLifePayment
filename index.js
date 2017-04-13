@@ -1,9 +1,15 @@
 'use strict';
 var AV = require('leancloud-storage');
 
+const LC_DEV_APP_ID = 'K5Rltwmfnxd5pYjMsOFFL0kT-gzGzoHsz'
+const LC_DEV_APP_KEY = 'UseC5jvqLT7TIiQWI8nRPmEl'
+
+const LC_PRO_APP_ID = 'TUVjJ5HHNmopfJeREa4IcB1T-gzGzoHsz'
+const LC_PRO_APP_KEY = 'XYSEQ5K4FYtMp7P8HXT8Vz63'
+
 AV.init({
-  appId: 'K5Rltwmfnxd5pYjMsOFFL0kT-gzGzoHsz',
-  appKey: 'UseC5jvqLT7TIiQWI8nRPmEl',
+  appId: LC_DEV_APP_ID,
+  appKey: LC_DEV_APP_KEY,
 });
 
 var app = require('./app');
