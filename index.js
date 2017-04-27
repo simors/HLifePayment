@@ -16,7 +16,7 @@ const LC_PRO_APP_KEY = ''
 
 if(env === 'dev') {
   LC_APP_ID = LC_DEV_APP_ID
-  LC_APP_ID = LC_DEV_APP_KEY
+  LC_APP_KEY = LC_DEV_APP_KEY
   port = 3001
 } else if(env === 'pre') {
   LC_APP_ID = LC_PRE_APP_ID
@@ -34,7 +34,7 @@ if(env === 'dev') {
 
 AV.init({
   appId: LC_APP_ID,
-  appKey: LC_APP_ID,
+  appKey: LC_APP_KEY,
 });
 
 var app = require('./app');
