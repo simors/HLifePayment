@@ -11,8 +11,8 @@ const LC_DEV_APP_KEY = 'UseC5jvqLT7TIiQWI8nRPmEl'
 const LC_PRE_APP_ID = 'TUVjJ5HHNmopfJeREa4IcB1T-gzGzoHsz'
 const LC_PRE_APP_KEY = 'XYSEQ5K4FYtMp7P8HXT8Vz63'
 
-const LC_PRO_APP_ID = ''
-const LC_PRO_APP_KEY = ''
+const LC_PRO_APP_ID = 'pHIMCdWo3VQX09TKFuU9AGdd-gzGzoHsz'
+const LC_PRO_APP_KEY = 'qhIzQiFonde2yeaBdlcXHUDz'
 
 if(env === 'dev') {
   LC_APP_ID = LC_DEV_APP_ID
