@@ -50,28 +50,25 @@ app.use(function (req, res) {
           var params = {
             data: event.data,
           }
-          AV.Cloud.run('hLifePaymentEvent', params).then((result) => {
-            return result
+          AV.Cloud.run('hLifePaymentEvent', params).then(() => {
+            console.log("leancloud处理付款成功消息成功")
+            resp("OK", 200)
           }).catch((error) => {
-            error.message = ERROR[error.code] ? ERROR[error.code] : ERROR[9999]
-            throw  error
+            console.log("leancloud处理付款成功消息失败", error)
+            resp("charge.succeeded process failed!", 500)
           })
-          console.log("get event: charge.succeeded")
-          // 开发者在此处加入对支付异步通知的处理代码
-          return resp("OK", 200);
           break;
         case "transfer.succeeded":
           var params = {
             data: event.data,
           }
-          AV.Cloud.run('hLifeTransfersEvent', params).then((result) => {
-            return result
+          AV.Cloud.run('hLifeTransfersEvent', params).then(() => {
+            console.log("leancloud处理提现成功消息成功")
+            resp("OK", 200)
           }).catch((error) => {
-            error.message = ERROR[error.code] ? ERROR[error.code] : ERROR[9999]
-          throw  error
+            console.log("leancloud处理提现成功消息失败", error)
+            resp("transfer.succeeded process failed!", 500)
           })
-          console.log("get event: transfer.succeeded")
-          return resp("OK", 200);
           break;
         case "refund.succeeded":
           console.log("get event: refund.succeeded")
